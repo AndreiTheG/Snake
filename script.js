@@ -179,7 +179,7 @@ function createTable() {
 }
 
 function Replay() {
-    window.location.refresh();
+    window.location.reload();
 }
 
 function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit) {
