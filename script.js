@@ -144,7 +144,7 @@ function createTable() {
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
                     let replayButton = document.createElement("button");
                     replayButton.innerHTML = "Replay";
-                    replayButton.class = "btn btn-secondary";
+                    replayButton.classList = "btn btn-secondary";
                     replayButton.id = "Replay";
                     replayButton.onclick = "Replay()";
                     document.body.appendChild(replayButton);
