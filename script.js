@@ -102,6 +102,7 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
+                    document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
                 }
             }, 300); 
         }
@@ -123,6 +124,7 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
+                    document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
                 }
             }, 300); 
         } else if (event.key == 'ArrowDown' &&  arrowUp == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
@@ -143,6 +145,7 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
+                    document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
                 }
             }, 300); 
         }
