@@ -64,7 +64,7 @@ function createTable() {
             replayButton.innerHTML = "Replay";
             replayButton.classList = "btn btn-secondary";
             replayButton.id = "Replay";
-            replayButton.onclick = "Replay()";
+            replayButton.onclick = "ReplayGame()";
             document.body.appendChild(replayButton);
         }
     } }, 300);
@@ -91,7 +91,7 @@ function createTable() {
                     replayButton.innerHTML = "Replay";
                     replayButton.classList = "btn btn-secondary";
                     replayButton.id = "Replay";
-                    replayButton.onclick = "Replay()";
+                    replayButton.onclick = "ReplayGame()";
                     document.body.appendChild(replayButton);
                 }
             }, 300); 
@@ -117,7 +117,7 @@ function createTable() {
                     replayButton.innerHTML = "Replay";
                     replayButton.classList = "btn btn-secondary";
                     replayButton.id = "Replay";
-                    replayButton.onclick = "Replay()";
+                    replayButton.onclick = "ReplayGame()";
                     document.body.appendChild(replayButton);
                 }
             }, 300); 
@@ -144,7 +144,7 @@ function createTable() {
                     replayButton.innerHTML = "Replay";
                     replayButton.classList = "btn btn-secondary";
                     replayButton.id = "Replay";
-                    replayButton.onclick = "Replay()";
+                    replayButton.onclick = "ReplayGame()";
                     document.body.appendChild(replayButton);
                 }
             }, 300); 
@@ -170,7 +170,7 @@ function createTable() {
                     replayButton.innerHTML = "Replay";
                     replayButton.classList = "btn btn-secondary";
                     replayButton.id = "Replay";
-                    replayButton.onclick = "Replay()";
+                    replayButton.onclick = "ReplayGame()";
                     document.body.appendChild(replayButton);
                 }
             }, 300); 
