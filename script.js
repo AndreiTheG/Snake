@@ -142,6 +142,11 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
+                    let replayButton = document.createElement("button");
+                    replayButton.innerHTML = "Replay";
+                    replayButton.id = "Replay";
+                    replayButton.onclick = "Replay()";
+                    document.body.appendChild(replayButton);
                 }
             }, 300); 
         }
