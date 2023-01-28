@@ -178,6 +178,10 @@ function createTable() {
     });
 }
 
+function Replay() {
+    window.location.refresh();
+}
+
 function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit) {
     if (snakeLine.x == fruitLine.val && snakeCol.y == fruitCol.val) {
         let isBorderCell = true;
