@@ -60,12 +60,6 @@ function createTable() {
             clearInterval(interval);
             let gameMessage = document.getElementById('EndOfTheGame');
             gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-            let replayButton = document.createElement("button");
-            replayButton.innerHTML = "Replay";
-            replayButton.classList = "btn btn-secondary";
-            replayButton.id = "Replay";
-            replayButton.onclick = "ReplayGame()";
-            document.body.appendChild(replayButton);
         }
     } }, 300);
     window.addEventListener("keydown", function move(event) {
@@ -87,12 +81,6 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-                    let replayButton = document.createElement("button");
-                    replayButton.innerHTML = "Replay";
-                    replayButton.classList = "btn btn-secondary";
-                    replayButton.id = "Replay";
-                    replayButton.onclick = "ReplayGame()";
-                    document.body.appendChild(replayButton);
                 }
             }, 300); 
         } else if (event.key == "ArrowLeft" && arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
@@ -113,12 +101,6 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-                    let replayButton = document.createElement("button");
-                    replayButton.innerHTML = "Replay";
-                    replayButton.classList = "btn btn-secondary";
-                    replayButton.id = "Replay";
-                    replayButton.onclick = "ReplayGame()";
-                    document.body.appendChild(replayButton);
                 }
             }, 300); 
         }
@@ -140,12 +122,6 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-                    let replayButton = document.createElement("button");
-                    replayButton.innerHTML = "Replay";
-                    replayButton.classList = "btn btn-secondary";
-                    replayButton.id = "Replay";
-                    replayButton.onclick = "ReplayGame()";
-                    document.body.appendChild(replayButton);
                 }
             }, 300); 
         } else if (event.key == 'ArrowDown' &&  arrowUp == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
@@ -166,12 +142,6 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-                    let replayButton = document.createElement("button");
-                    replayButton.innerHTML = "Replay";
-                    replayButton.classList = "btn btn-secondary";
-                    replayButton.id = "Replay";
-                    replayButton.onclick = "ReplayGame()";
-                    document.body.appendChild(replayButton);
                 }
             }, 300); 
         }
