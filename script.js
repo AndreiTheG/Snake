@@ -81,7 +81,7 @@ function createTable() {
                     clearInterval(interval);
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-                    document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" onclick="ReplayGame()">Replay</button>';
+                    document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
                 }
             }, 300); 
         } else if (event.key == "ArrowLeft" && arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
