@@ -178,7 +178,7 @@ function createTable() {
     });
 }
 
-function Replay() {
+function ReplayGame() {
     window.location.reload();
 }
 
