@@ -155,7 +155,7 @@ function createTable() {
     });
 }
 
-function moveSnake(interval, snake, len, snakeLine, snakeCol, len, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
+function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
