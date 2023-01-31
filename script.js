@@ -58,6 +58,7 @@ function createTable() {
         if (event.key == 'ArrowRight' && arrowLeft == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
             snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+            clearInterval(interval); 
             direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval); 
@@ -69,6 +70,7 @@ function createTable() {
         } else if (event.key == "ArrowLeft" && arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+            clearInterval(interval); 
             direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval);
@@ -81,6 +83,7 @@ function createTable() {
         if (event.key == 'ArrowUp' && arrowDown == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+            clearInterval(interval); 
             direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval);
@@ -92,6 +95,7 @@ function createTable() {
         } else if (event.key == 'ArrowDown' &&  arrowUp == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+            clearInterval(interval); 
             direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval);
@@ -106,7 +110,6 @@ function createTable() {
 
 function direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
-    clearInterval(interval); 
     isSnakeBody.value = false;
     interval = setInterval(function output() {
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
