@@ -67,7 +67,7 @@ function createTable() {
             }, 300);
         } else if (event.key == "ArrowLeft" && arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false
+            arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
             isSnakeBody.value = false;
             clearInterval(interval);
             isSnakeBody.value = false;
