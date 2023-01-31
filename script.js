@@ -107,7 +107,7 @@ function createTable() {
     });
 }
 
-function direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+function directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     console.log(interval.val);
     clearInterval(interval.val); 
