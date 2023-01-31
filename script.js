@@ -58,7 +58,6 @@ function createTable() {
         if (event.key == 'ArrowRight' && arrowLeft == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
             snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
-            isSnakeBody.value = false;
             clearInterval(interval); 
             isSnakeBody.value = false;
             interval = setInterval(function output() {
@@ -68,7 +67,6 @@ function createTable() {
         } else if (event.key == "ArrowLeft" && arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
-            isSnakeBody.value = false;
             clearInterval(interval);
             isSnakeBody.value = false;
             interval = setInterval(function output() {
@@ -79,7 +77,6 @@ function createTable() {
         if (event.key == 'ArrowUp' && arrowDown == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
-            isSnakeBody.value = false;
             clearInterval(interval);
             isSnakeBody.value = false;
             interval = setInterval(function output() {
@@ -89,7 +86,6 @@ function createTable() {
         } else if (event.key == 'ArrowDown' &&  arrowUp == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
-            isSnakeBody.value = false;
             clearInterval(interval);
             isSnakeBody.value = false;
             interval = setInterval(function output() {
