@@ -161,7 +161,7 @@ function createTable() {
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody) {
     if (arrowRight == true) {
-        moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
+        moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
     } else if (arrowLeft == true) {
         moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
     }
