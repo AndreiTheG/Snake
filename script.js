@@ -56,15 +56,12 @@ function createTable() {
         if (eatenFruit.val == true) {
             eatenFruit.val = false;
         }
-        randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
+        randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);*/
         if (snakeCol.y == 18 || isBody.value == true) {
             clearInterval(interval);
             let gameMessage = document.getElementById('EndOfTheGame');
             gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
             document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
-        }*/
-        if (snakeCol.y == 18 || isBody.value == true) {
-            clearInterval(interval);
         }
     } }, 300);
     window.addEventListener("keydown", function move(event) {
@@ -163,12 +160,6 @@ function moveSnake(snake, len, snakeLine, snakeCol, len, eatenFruit, isBody, arr
         eatenFruit.val = false;
     }
     randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
-    if (snakeCol.y == 18 || isBody.value == true) {
-        clearInterval(interval);
-        let gameMessage = document.getElementById('EndOfTheGame');
-        gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-        document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
-    }
 }
 
 function ReplayGame() {
