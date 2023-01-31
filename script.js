@@ -109,8 +109,8 @@ function createTable() {
 
 function directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
-    console.log(interval);
-    clearInterval(interval); 
+    console.log(interval.val);
+    clearInterval(interval.val); 
     isSnakeBody.value = false;
     interval.val = setInterval(function output() {
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
@@ -121,8 +121,8 @@ function directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fr
 
 function directionUp(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
-    console.log(interval);
-    clearInterval(interval); 
+    console.log(interval.val);
+    clearInterval(interval.val); 
     isSnakeBody.value = false;
     interval.val = setInterval(function output() {
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
