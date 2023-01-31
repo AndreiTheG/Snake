@@ -63,6 +63,9 @@ function createTable() {
             gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
             document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
         }*/
+        if (snakeCol.y == 18 || isBody.value == true) {
+            clearInterval(interval);
+        }
     } }, 300);
     window.addEventListener("keydown", function move(event) {
         if (event.key == 'ArrowRight' && arrowLeft == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
