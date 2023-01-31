@@ -109,14 +109,16 @@ function createTable() {
 
 function direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
-    console.log(interval.val);
+    console.log(arrowRight);
+    console.log(arrowLeft);
+    console.log(arrowUp);
+    console.log(arrowDown);
     clearInterval(interval.val); 
     isSnakeBody.value = false;
     interval.val = setInterval(function output() {
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
             eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
     }, 300); 
-    console.log(interval.val);
 }
 
 /*function directionUp(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
