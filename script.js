@@ -171,7 +171,7 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
     }
     randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
-        clearInterval(interval);
+        clearInterval(interval.val);
         let gameMessage = document.getElementById('EndOfTheGame');
         gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
         document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
