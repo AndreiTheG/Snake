@@ -51,7 +51,7 @@ function createTable() {
     let interval, arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false;
     const eatenFruit = {val: false}, isBody = {value: false};
     interval = setInterval(function output() { if (arrowRight == true) {  
-        moveSnake(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+        moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
         /*moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
         if (eatenFruit.val == true) {
             eatenFruit.val = false;
@@ -155,7 +155,7 @@ function createTable() {
     });
 }
 
-function moveSnake(snake, len, snakeLine, snakeCol, len, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
+function moveSnake(interval, snake, len, snakeLine, snakeCol, len, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
