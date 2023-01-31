@@ -61,7 +61,7 @@ function createTable() {
             snakeCol.y >= 1 && snakeCol.y <= 17) {
             //console.log(interval);
             arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
-            directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+            direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval); 
             isSnakeBody.value = false;
@@ -72,7 +72,7 @@ function createTable() {
         } else if (event.key == "ArrowLeft" && arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
-            directionLeft(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+            direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval);
             isSnakeBody.value = false;
@@ -84,7 +84,7 @@ function createTable() {
         if (event.key == 'ArrowUp' && arrowDown == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
-            directionUp(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+            direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval);
             isSnakeBody.value = false;
@@ -95,7 +95,7 @@ function createTable() {
         } else if (event.key == 'ArrowDown' &&  arrowUp == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
-            directionDown(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+            direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             /*clearInterval(interval);
             isSnakeBody.value = false;
@@ -107,7 +107,7 @@ function createTable() {
     });
 }
 
-function directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+function direction(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     console.log(interval.val);
     clearInterval(interval.val); 
@@ -119,7 +119,7 @@ function directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fr
     console.log(interval.val);
 }
 
-function directionUp(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+/*function directionUp(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     console.log(interval.val);
     clearInterval(interval.val); 
@@ -153,7 +153,7 @@ function directionDown(interval, snake, len, snakeLine, snakeCol, fruitLine, fru
             eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
     }, 300); 
     console.log(interval.val);
-}
+}*/
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     if (arrowRight == true) {
