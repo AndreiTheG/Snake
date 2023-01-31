@@ -58,7 +58,7 @@ function createTable() {
     window.addEventListener("keydown", function move(event) {
         if (event.key == 'ArrowRight' && arrowLeft == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
             snakeCol.y >= 1 && snakeCol.y <= 17) {
-            console.log(interval);
+            //console.log(interval);
             arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
             directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                 eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
