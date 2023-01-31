@@ -113,6 +113,7 @@ function directionRight(interval, snake, len, snakeLine, snakeCol, fruitLine, fr
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
             eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
     }, 300); 
+    console.log(interval);
 }
 
 function directionUp(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
@@ -123,6 +124,7 @@ function directionUp(interval, snake, len, snakeLine, snakeCol, fruitLine, fruit
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
             eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
     }, 300); 
+    console.log(interval);
 }
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
