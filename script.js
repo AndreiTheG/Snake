@@ -56,7 +56,7 @@ function createTable() {
     } }, 300);
     window.addEventListener("keydown", function move(event) {
         if (event.key == 'ArrowRight' && arrowLeft == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
-            snakeCol.y >= 1 && snakeCol.y <= 17) {
+        snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
             clearInterval(interval); 
             isSnakeBody.value = false;
