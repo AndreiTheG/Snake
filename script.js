@@ -49,9 +49,9 @@ function createTable() {
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
     let interval, arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false;
-    const eatenFruit = {val: false}, isBody = {value: false};
+    const eatenFruit = {val: false}, isBody = {value: false}, isSnakeBody = {value: false};;
     interval = setInterval(function output() { if (arrowRight == true) {  
-        moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+        moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody);
         /*moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
         if (eatenFruit.val == true) {
             eatenFruit.val = false;
@@ -73,9 +73,9 @@ function createTable() {
             arrowLeft = false;
             arrowUp = false;
             arrowDown = false;
-            const isSnakeBody = {value: false};
+            isSnakeBody = {value: false};
             interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody);
                 /*moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
                 if (eatenFruit.val == true) {
                     eatenFruit.val = false;
@@ -95,9 +95,9 @@ function createTable() {
             arrowUp = false;
             arrowDown = false;
             clearInterval(interval);
-            const isSnakeBody = {value: false};
+            isSnakeBody = {value: false};
             interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody);
                 /*moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
                 if (eatenFruit.val == true) {
                     eatenFruit.val = false;
@@ -118,9 +118,9 @@ function createTable() {
             arrowUp = true;
             arrowDown = false;
             clearInterval(interval);
-            const isSnakeBody = {value: false};
+            isSnakeBody = {value: false};
             interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody);
                 /*moveUp(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
                 if (eatenFruit.val == true) {
                     eatenFruit.val = false;
@@ -140,9 +140,9 @@ function createTable() {
             arrowUp = false;
             arrowDown = true;
             clearInterval(interval);
-            const isSnakeBody = {value: false};
+            isSnakeBody = {value: false};
             interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody);
                 /*moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
                 if (eatenFruit.val == true) {
                     eatenFruit.val = false;
@@ -159,7 +159,7 @@ function createTable() {
     });
 }
 
-function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
+function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody) {
     if (arrowRight == true) {
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
     } else if (arrowLeft == true) {
