@@ -159,7 +159,7 @@ function createTable() {
     });
 }
 
-function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown, isSnakeBody) {
+function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     if (arrowRight == true) {
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
     } else if (arrowLeft == true) {
