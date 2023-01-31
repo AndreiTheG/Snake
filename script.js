@@ -51,6 +51,7 @@ function createTable() {
     let interval, arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false;
     const eatenFruit = {val: false}, isBody = {value: false};
     interval = setInterval(function output() { if (arrowRight == true) {  
+        moveSnake(snake, snakeLine, snakeCol, len, eatenFruit, isBody)
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
         if (eatenFruit.val == true) {
             eatenFruit.val = false;
