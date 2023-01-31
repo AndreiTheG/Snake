@@ -142,7 +142,8 @@ function createTable() {
             clearInterval(interval);
             const isSnakeBody = {value: false};
             interval = setInterval(function output() {
-                moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
+                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                /*moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
                 if (eatenFruit.val == true) {
                     eatenFruit.val = false;
                 }
@@ -152,7 +153,7 @@ function createTable() {
                     let gameMessage = document.getElementById('EndOfTheGame');
                     gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
                     document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
-                }
+                }*/
             }, 300); 
         }
     });
