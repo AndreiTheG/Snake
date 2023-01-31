@@ -50,7 +50,6 @@ function createTable() {
     document.getElementById('button').disabled = true;
     let interval, arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false;
     const eatenFruit = {val: false}, isBody = {value: false};
-    //Interval(interval);
     interval = setInterval(function output() { if (arrowRight == true) {  
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isBody);
         if (eatenFruit.val == true) {
