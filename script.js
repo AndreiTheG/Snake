@@ -171,6 +171,7 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
     }
+    console.log(arrowRight, arrowLeft, arrowUp, arrowDown);
     randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
         clearInterval(interval);
