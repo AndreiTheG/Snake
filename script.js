@@ -224,6 +224,7 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
             isSnakeBody.value = true;
         }*/
         for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
+            console.log(snake.value[i]);
             if (snake.value[i] == nextValue) {
                 isSnakeBody.value = true;
             }
