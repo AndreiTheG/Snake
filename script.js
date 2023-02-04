@@ -23,7 +23,6 @@ function createTable() {
             const td = document.createElement("td");
             if (i != 0 && j != 0 && i != 16 && j != 18) {
                 td.id = i * 100 +  j;
-                console.log(td.id);
                 td.appendChild(document.createTextNode(' '));
                 if (i == snakeLine.x && (j == snakeCol.y || j == snakeCol.y - 1 || j == snakeCol.y - 2)) {
                     snake.value[len.size] = i * 100 + j;
