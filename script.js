@@ -223,6 +223,7 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
         if (cell.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }
+        console.log(isSnakeBody.value);
         for (let i = 0; i < len.size - 1; ++i) {
             snake.value[i] = snake.value[i + 1];
         } 
