@@ -220,20 +220,27 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
         elem.style.backgroundColor = 'yellow';
     } else {
         let cell = document.getElementById(nextValue);
-        if (cell.style.backgroundColor == 'yellow') {
+        /*if (cell.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
+        }*/
+        for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
+            if (snake.value[i] == nextValue) {
+                isSnakeBody.value = true;
+            }
         }
-        console.log(isSnakeBody.value);
-        for (let i = 0; i < len.size - 1; ++i) {
-            snake.value[i] = snake.value[i + 1];
-        } 
-        snake.value[len.size - 1] = nextValue;
-        for (let i = 0; i < len.size; ++i) {
-            let elem = document.getElementById(snake.value[i]); 
-            elem.style.backgroundColor = 'yellow';
+        if (isSnakeBody.value == false) {
+            console.log(isSnakeBody.value);
+            for (let i = 0; i < len.size - 1; ++i) {
+                snake.value[i] = snake.value[i + 1];
+            } 
+            snake.value[len.size - 1] = nextValue;
+            for (let i = 0; i < len.size; ++i) {
+                let elem = document.getElementById(snake.value[i]); 
+                elem.style.backgroundColor = 'yellow';
+            }
+            let elem = document.getElementById(prevTail);
+            elem.style.backgroundColor = 'lawngreen';
         }
-        let elem = document.getElementById(prevTail);
-        elem.style.backgroundColor = 'lawngreen';
     }  
 }
 
