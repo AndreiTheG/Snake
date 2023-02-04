@@ -251,6 +251,7 @@ function moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
     if (snakeCol.y <= 17) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
+    console.log(isSnakeBody.value);
 }
 
 function moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
