@@ -13,6 +13,7 @@ function createTable() {
     } else if (fruitCol.val == 18) {
         --fruitCol.val;
     }
+    console.log("Line: " + fruitLine.val + " Column: " + fruitCol.val);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
     const snake = {value: []};
     const len = {size: 0};
