@@ -216,19 +216,6 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
         }
         let fruit = document.getElementById(fruitLine.val * 100 + fruitCol.val);
         fruit.style.backgroundColor = 'red';
-        if (document.getElementById((fruitLine.val - 1) * 100 + fruitCol.val).style.backgroundColor == 'yellow') {
-            isSnakeBody.value = true;
-            console.log(isSnakeBody.value);
-        } else if (document.getElementById(fruitLine.val * 100 + (fruitCol.val + 1)).style.backgroundColor == 'yellow') {
-            isSnakeBody.value = true;
-            console.log(isSnakeBody.value);
-        } else if (document.getElementById((fruitLine.val + 1) * 100 + fruitCol.val).style.backgroundColor == 'yellow') {
-            isSnakeBody.value = true;
-            console.log(isSnakeBody.value);
-        } else if (document.getElementById(fruitLine.val * 100 + (fruitCol.val - 1)).style.backgroundColor == 'yellow') {
-            isSnakeBody.value = true;
-            console.log(isSnakeBody.value);
-        }
     }
 }
 
