@@ -166,7 +166,7 @@ function directionDown(interval, snake, len, snakeLine, snakeCol, fruitLine, fru
 }*/
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
-    randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
+    
     if (arrowRight == true) {
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
     } else if (arrowLeft == true) {
@@ -181,7 +181,7 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
         eatenFruit.val = false;
     }
     console.log(isSnakeBody.value);
-    
+    randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody);
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
         clearInterval(interval);
         let gameMessage = document.getElementById('EndOfTheGame');
@@ -194,7 +194,7 @@ function ReplayGame() {
     window.location.reload();
 }
 
-function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit) {
+function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody) {
     if (snakeLine.x == fruitLine.val && snakeCol.y == fruitCol.val) {
         let isBorderCell = true;
         eatenFruit.val = true;
@@ -217,6 +217,15 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
         }
         let fruit = document.getElementById(fruitLine.val * 100 + fruitCol.val);
         fruit.style.backgroundColor = 'red';
+        if (document.getElementById((fruitLine.val - 1) * 100 + fruitCol.val).style.backgroundColor == 'yellow') {
+            isSnakeBody.value = true;
+        } else if (document.getElementById(fruitLine.val * 100 + (fruitCol.val + 1)).style.backgroundColor == 'yellow') {
+            isSnakeBody.value = true;
+        } else if (document.getElementById((fruitLine.val + 1) * 100 + fruitCol.val).style.backgroundColor == 'yellow') {
+            isSnakeBody.value = true;
+        } else if (document.getElementById(fruitLine.val * 100 + (fruitCol.val - 1)).style.backgroundColor == 'yellow') {
+            isSnakeBody.value = true;
+        }
     }
 }
 
