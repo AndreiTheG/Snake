@@ -166,6 +166,7 @@ function directionDown(interval, snake, len, snakeLine, snakeCol, fruitLine, fru
 }*/
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
+    randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
     if (arrowRight == true) {
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
     } else if (arrowLeft == true) {
@@ -180,7 +181,7 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
         eatenFruit.val = false;
     }
     console.log(isSnakeBody.value);
-    randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
+    
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
         clearInterval(interval);
         let gameMessage = document.getElementById('EndOfTheGame');
