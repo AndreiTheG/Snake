@@ -60,8 +60,19 @@ function createTable() {
     let interval; 
     const eatenFruit = {val: false}, isSnakeBody = {value: false};
     interval = setInterval(function output() { if (arrowRight == true) {  
-        moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-            eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+        //moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+        //    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+        moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
+        if (eatenFruit.val == true) {
+            eatenFruit.val = false;
+        }
+        randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit);
+        if (snakeCol.y == 18 || isSnakeBody.value == true) {
+            clearInterval(interval);
+            let gameMessage = document.getElementById('EndOfTheGame');
+            gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
+            document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
+        }
     } }, 300);
     console.log(interval);
     window.addEventListener("keydown", function move(event) {
