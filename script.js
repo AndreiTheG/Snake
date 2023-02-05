@@ -36,7 +36,7 @@ function createTable() {
                     snake.value[len.size] = i * 100 + j;
                     ++len.size;
                     td.style.backgroundColor = 'yellow';
-                } else if (i == fruitLine.val && j == fruitCol.val && i != snakeLine.x && j != snakeCol.y) {
+                } else if (i == fruitLine.val && j == fruitCol.val) {
                     td.style.backgroundColor = 'red';
                 } else {
                     td.style.backgroundColor = 'lawngreen';
