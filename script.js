@@ -1,8 +1,16 @@
 function createTable() {
     const tbl = document.createElement("table");
     const tbdy = document.createElement("tbody");
-    const fruitLine = {val: Math.floor(Math.random() * 16)};
-    const fruitCol = {val: Math.floor(Math.random() * 18)};
+    const fruitLine = {val: 0};
+    const fruitCol = {val: 0};
+    let isNotSnake = false;
+    while (isNotSnake == false) {
+        fruitLine.val =  Math.floor(Math.random() * 16);
+        fruitCol.val =  Math.floor(Math.random() * 18);
+        if (!(fruitLine.val == 8 && (fruitCol.val == 7 || fruitCol.val == 8 || fruitCol.val == 9))) {
+            isNotSnake = true;
+        }
+    }
     if (fruitLine.val == 0) {
         ++fruitLine.val;
     } else if (fruitLine.val == 16) {
