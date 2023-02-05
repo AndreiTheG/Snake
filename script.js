@@ -166,7 +166,6 @@ function directionDown(interval, snake, len, snakeLine, snakeCol, fruitLine, fru
 }*/
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
-    
     if (arrowRight == true) {
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
     } else if (arrowLeft == true) {
@@ -219,12 +218,16 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
         fruit.style.backgroundColor = 'red';
         if (document.getElementById((fruitLine.val - 1) * 100 + fruitCol.val).style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
+            console.log(isSnakeBody.value);
         } else if (document.getElementById(fruitLine.val * 100 + (fruitCol.val + 1)).style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
+            console.log(isSnakeBody.value);
         } else if (document.getElementById((fruitLine.val + 1) * 100 + fruitCol.val).style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
+            console.log(isSnakeBody.value);
         } else if (document.getElementById(fruitLine.val * 100 + (fruitCol.val - 1)).style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
+            console.log(isSnakeBody.value);
         }
     }
 }
