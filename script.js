@@ -180,8 +180,8 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
     }
-    console.log(isSnakeBody.value);
     randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody);
+    console.log(isSnakeBody.value);
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
         clearInterval(interval);
         let gameMessage = document.getElementById('EndOfTheGame');
