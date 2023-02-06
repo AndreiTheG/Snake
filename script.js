@@ -227,6 +227,9 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
         let elem = document.getElementById(nextValue);
         elem.style.backgroundColor = 'yellow';
         console.log("isEaten");
+        if (document.getElementById((snakeLine.x + 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow') {
+            console.log("It's yellow!");
+        }
     } else {
         let cell = document.getElementById(nextValue);
         /*if (cell.style.backgroundColor == 'yellow') {
