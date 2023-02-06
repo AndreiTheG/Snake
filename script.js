@@ -200,7 +200,6 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
         while (isBorderCell == true) {
             fruitLine.val = Math.floor(Math.random() * 16);
             fruitCol.val = Math.floor(Math.random() * 18);
-            //console.log("FruitLine: " + fruitLine.val + " FruitCol: " + fruitCol.val + "");
             if (fruitLine.val >= 1 && fruitLine.val <= 15 && fruitCol.val >= 1 
                 && fruitCol.val <= 17 && (fruitLine.val != snakeLine.x || fruitCol.val != snakeCol.y)) {
                 let cell = fruitLine.val * 100 + fruitCol.val, isTrue = false;
@@ -216,16 +215,16 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
         }
         if (document.getElementById((snakeLine.x + 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow') {
             console.log("It's yellow! 1");
-            //isSnakeBody.value = true;
+            isSnakeBody.value = true;
         } else if (document.getElementById((snakeLine.x - 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow') {
             console.log("It's yellow! 2");
-            //isSnakeBody.value = true;
+            isSnakeBody.value = true;
         } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y - 1)).style.backgroundColor == 'yellow') {
             console.log("It's yellow! 3");
-            //isSnakeBody.value = true;
+            isSnakeBody.value = true;
         } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y + 1)).style.backgroundColor == 'yellow') {
             console.log("It's yellow! 4");
-            //isSnakeBody.value = true;
+            isSnakeBody.value = true;
         }
         let fruit = document.getElementById(fruitLine.val * 100 + fruitCol.val);
         fruit.style.backgroundColor = 'red';
