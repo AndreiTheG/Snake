@@ -249,14 +249,14 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
         /*if (cell.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }*/
-        for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
+        /*for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
             //console.log(snake.value[i]);
             if (snake.value[i] == nextValue) {
                 isSnakeBody.value = true;
             }
-        }
+        }*/
         //console.log(isSnakeBody.value);
-        if (isSnakeBody.value == false) {
+        //if (isSnakeBody.value == false) {
             for (let i = 0; i < len.size - 1; ++i) {
                 snake.value[i] = snake.value[i + 1];
             } 
@@ -267,7 +267,7 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
             }
             let elem = document.getElementById(prevTail);
             elem.style.backgroundColor = 'lawngreen';
-        }
+        //}
     }  
 }
 
