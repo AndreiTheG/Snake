@@ -166,20 +166,25 @@ function directionDown(interval, snake, len, snakeLine, snakeCol, fruitLine, fru
 }*/
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
+    let direction;
     if (arrowRight == true) {
         moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
+        direction = 'right';
     } else if (arrowLeft == true) {
         moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
+        direction = 'left';
     }
     if (arrowUp == true) {
         moveUp(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
+        direction = 'up';
     } else if (arrowDown == true) {
         moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
+        direction = 'down';
     }
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
     }
-    randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody);
+    randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction);
     console.log(isSnakeBody.value);
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
         clearInterval(interval);
@@ -193,7 +198,7 @@ function ReplayGame() {
     window.location.reload();
 }
 
-function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody) {
+function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
     if (snakeLine.x == fruitLine.val && snakeCol.y == fruitCol.val) {
         let isBorderCell = true;
         eatenFruit.val = true;
@@ -213,16 +218,16 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
                 }
             }
         }
-        if (document.getElementById((snakeLine.x + 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow') {
+        if (document.getElementById((snakeLine.x + 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow' && direction == 'down') {
             console.log("It's yellow! 1");
             isSnakeBody.value = true;
-        } else if (document.getElementById((snakeLine.x - 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow') {
+        } else if (document.getElementById((snakeLine.x - 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow' && direction == 'up') {
             console.log("It's yellow! 2");
             isSnakeBody.value = true;
-        } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y - 1)).style.backgroundColor == 'yellow') {
+        } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y - 1)).style.backgroundColor == 'yellow' && direction == 'left') {
             console.log("It's yellow! 3");
             isSnakeBody.value = true;
-        } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y + 1)).style.backgroundColor == 'yellow') {
+        } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y + 1)).style.backgroundColor == 'yellow' && direction == 'right') {
             console.log("It's yellow! 4");
             isSnakeBody.value = true;
         }
