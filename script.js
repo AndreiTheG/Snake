@@ -228,7 +228,16 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
         elem.style.backgroundColor = 'yellow';
         console.log("isEaten");
         if (document.getElementById((snakeLine.x + 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow' && direction == 'down') {
-            console.log("It's yellow!");
+            console.log("It's yellow! 1");
+            //isSnakeBody.value = true;
+        } else if (document.getElementById((snakeLine.x - 1) * 100 + snakeCol.y).style.backgroundColor == 'yellow' && direction == 'up') {
+            console.log("It's yellow! 2");
+            //isSnakeBody.value = true;
+        } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y - 1)).style.backgroundColor == 'yellow' && direction == 'left') {
+            console.log("It's yellow! 3");
+            //isSnakeBody.value = true;
+        } else if (document.getElementById(snakeLine.x * 100 + (snakeCol.y + 1)).style.backgroundColor == 'yellow' && direction == 'right') {
+            console.log("It's yellow! 4");
             //isSnakeBody.value = true;
         }
     } else {
