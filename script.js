@@ -200,7 +200,7 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
         while (isBorderCell == true) {
             fruitLine.val = Math.floor(Math.random() * 16);
             fruitCol.val = Math.floor(Math.random() * 18);
-            console.log("FruitLine: " + fruitLine.val + " FruitCol: " + fruitCol.val + "");
+            //console.log("FruitLine: " + fruitLine.val + " FruitCol: " + fruitCol.val + "");
             if (fruitLine.val >= 1 && fruitLine.val <= 15 && fruitCol.val >= 1 
                 && fruitCol.val <= 17 && (fruitLine.val != snakeLine.x || fruitCol.val != snakeCol.y)) {
                 let cell = fruitLine.val * 100 + fruitCol.val, isTrue = false;
@@ -226,18 +226,19 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
         snake.value[len.size - 1] = nextValue;
         let elem = document.getElementById(nextValue);
         elem.style.backgroundColor = 'yellow';
+        console.log("isEaten");
     } else {
         let cell = document.getElementById(nextValue);
         /*if (cell.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }*/
         for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
-            console.log(snake.value[i]);
+            //console.log(snake.value[i]);
             if (snake.value[i] == nextValue) {
                 isSnakeBody.value = true;
             }
         }
-        console.log(isSnakeBody.value);
+        //console.log(isSnakeBody.value);
         if (isSnakeBody.value == false) {
             for (let i = 0; i < len.size - 1; ++i) {
                 snake.value[i] = snake.value[i + 1];
@@ -259,7 +260,7 @@ function moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
     if (snakeCol.y <= 17) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
-    console.log(isSnakeBody.value);
+    //console.log(isSnakeBody.value);
 }
 
 function moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
@@ -268,7 +269,7 @@ function moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
     if (snakeCol.y >= 1) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
-    console.log(isSnakeBody.value);
+    //console.log(isSnakeBody.value);
 }
 
 function moveUp(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
@@ -277,7 +278,7 @@ function moveUp(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
     if (snakeLine.x >= 1) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
-    console.log(isSnakeBody.value);
+    //console.log(isSnakeBody.value);
 }
 
 function moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
@@ -286,5 +287,5 @@ function moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
     if (snakeLine.x <= 15) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
-    console.log(isSnakeBody.value);
+    //console.log(isSnakeBody.value);
 }
