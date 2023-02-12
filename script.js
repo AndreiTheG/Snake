@@ -63,7 +63,7 @@ function createTable() {
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             }, 300);
-        } else if (event.key == "ArrowLeft" /*&& arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
+        } else if (event.key == 'ArrowLeft' /*&& arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
         snakeCol.y >= 1 && snakeCol.y <= 17*/) {
             arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
             clearInterval(interval);
