@@ -146,14 +146,6 @@ function checkTheFruitPosition(fruitLine, fruitCol) {
     }
 }
 
-/*function intervalSet(interval) {
-    clearInterval(interval); 
-    interval = setInterval(function output() {
-        moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-            eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-    }, 300);
-}*/
-
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     let direction;
     if (arrowRight == true) {
