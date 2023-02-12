@@ -253,7 +253,7 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
 }
 
 function moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail= snake.value[0], direction = 'right';
+    let prevTail= snake.value[0];
     ++snakeCol.y;
     if (snakeCol.y <= 17) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
@@ -261,7 +261,7 @@ function moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
 }
 
 function moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail = snake.value[0], direction = 'left';
+    let prevTail = snake.value[0];
     --snakeCol.y;
     if (snakeCol.y >= 1) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
@@ -269,7 +269,7 @@ function moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
 }
 
 function moveUp(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail = snake.value[0], direction = 'up';
+    let prevTail = snake.value[0];
     --snakeLine.x;
     if (snakeLine.x >= 1) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
@@ -277,7 +277,7 @@ function moveUp(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
 }
 
 function moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail = snake.value[0], direction = 'down';
+    let prevTail = snake.value[0];
     ++snakeLine.x;
     if (snakeLine.x <= 15) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
