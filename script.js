@@ -60,7 +60,8 @@ function createTable() {
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
             if (event.key == 'ArrowRight') {
                 arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
-            } else if (event.key == 'ArrowUp') {
+            } 
+            if (event.key == 'ArrowUp') {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
             }
             //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
