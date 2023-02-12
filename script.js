@@ -66,9 +66,9 @@ function createTable() {
                 arrowLeft = true;
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
-                arrowRight = true;
+                arrowUp = true;
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
-                arrowRight = true;
+                arrowDown = true;
             }
             //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
             clearInterval(interval); 
