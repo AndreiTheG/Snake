@@ -57,7 +57,8 @@ function createTable() {
     window.addEventListener("keydown", function move(event) {
         //arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
         if (snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            if (event.key == 'ArrowRight' && arrowLeft == false) {
+            if (event.key == 'ArrowRight' && arrowLeft == false && snakeLine.x >= 1 
+            && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
                 arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
                 intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
@@ -66,7 +67,8 @@ function createTable() {
                     moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
                 }, 300);*/
-            } else if (event.key == 'ArrowLeft' && arrowRight == false) {
+            } else if (event.key == 'ArrowLeft' && arrowRight == false && snakeLine.x >= 1 
+            && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
                 arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
                 intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
@@ -75,11 +77,13 @@ function createTable() {
                     moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
                 }, 300);*/
-            } else if (event.key == 'ArrowUp' && arrowDown == false) {
+            } else if (event.key == 'ArrowUp' && arrowDown == false && snakeLine.x >= 1 
+            && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
                 intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-            } else if (event.key == 'ArrowDown' && arrowUp == false) {
+            } else if (event.key == 'ArrowDown' && arrowUp == false && snakeLine.x >= 1 
+            && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
                 arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
                 intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
