@@ -75,61 +75,7 @@ function createTable() {
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             }, 300);
-        } /*else if (event.key == 'ArrowLeft' && arrowRight == false) {
-            arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
-            clearInterval(interval); 
-            interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-            }, 300);
-        }*/
-            /*if (event.key == 'ArrowUp' && arrowDown == false) {
-                arrowUp = true;
-            } else if (event.key == 'ArrowDown' && arrowUp == false) {
-                arrowDown = true;
-            }*/
-            /*if ((event.key == 'ArrowRight' && arrowLeft == false) || (event.key == 'ArrowLeft' && arrowRight == false) 
-            || (event.key == 'ArrowUp' && arrowDown == false) || (event.key == 'ArrowDown' && arrowUp == false)) {
-                clearInterval(interval); 
-                interval = setInterval(function output() {
-                    moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                        eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-                }, 300);
-            }*/
-        /*if (event.key == 'ArrowRight' && arrowLeft == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
-            snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
-            clearInterval(interval); 
-            interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-            }, 300);
-        } else if (event.key == 'ArrowLeft' && arrowRight == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
-        snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
-            clearInterval(interval);
-            interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-            }, 300); 
-        }
-        if (event.key == 'ArrowUp' && arrowDown == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
-        snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
-            clearInterval(interval);
-            interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-            }, 300); 
-        } else if (event.key == 'ArrowDown' &&  arrowUp == false && snakeLine.x >= 1 && snakeLine.x <= 15 &&
-        snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
-            clearInterval(interval);
-            interval = setInterval(function output() {
-                moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, 
-                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-            }, 300);
-        }*/
+        } 
     });
 }
 
