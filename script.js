@@ -57,14 +57,14 @@ function createTable() {
     window.addEventListener("keydown", function move(event) {
         arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
         if (snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            if (event.key == 'ArrowRight') {
+            if (event.key == 'ArrowRight' && arrowLeft == false) {
                 arrowRight = true;
-            } else if (event.key == 'ArrowLeft') {
+            } else if (event.key == 'ArrowLeft' && arrowRight == false) {
                 arrowLeft = true;
             }
-            if (event.key == 'ArrowUp') {
+            if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowUp = true;
-            } else if (event.key == 'ArrowDown') {
+            } else if (event.key == 'ArrowDown' && arrowUp == false) {
                 arrowDown = true;
             }
             clearInterval(interval); 
