@@ -75,8 +75,7 @@ function createTable() {
                     moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
                 }, 300);*/
-            }
-            if (event.key == 'ArrowUp' && arrowDown == false) {
+            } else if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
                 intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
