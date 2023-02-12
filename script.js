@@ -46,10 +46,10 @@ function createTable() {
     tbl.setAttribute("border", "2");
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
-    Controller(fruitLine, fruitCol, snake, len);
+    Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
-function Controller(fruitLine, fruitCol, snake, len) {
+function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
     let arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false, interval; 
     const eatenFruit = {val: false}, isSnakeBody = {value: false};
     interval = setInterval(function output() { if (arrowRight == true) {  
