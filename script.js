@@ -55,16 +55,17 @@ function createTable() {
     } }, 300);
     console.log(interval);
     window.addEventListener("keydown", function move(event) {
+        arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
         if (snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
             if (event.key == 'ArrowRight') {
-                arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+                arrowRight = true;
             } else if (event.key == 'ArrowLeft') {
-                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+                arrowLeft = true;
             }
             if (event.key == 'ArrowUp') {
-                arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+                arrowUp = true;
             } else if (event.key == 'ArrowDown') {
-                arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+                arrowDown = true;
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
