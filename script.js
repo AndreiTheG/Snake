@@ -206,35 +206,3 @@ function snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBod
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
 }
-
-/*function moveRight(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail= snake.value[0];
-    ++snakeCol.y;
-    if (snakeCol.y <= 17) {
-        snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
-    }
-}
-
-function moveLeft(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail = snake.value[0];
-    --snakeCol.y;
-    if (snakeCol.y >= 1) {
-        snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
-    }
-}
-
-function moveUp(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail = snake.value[0];
-    --snakeLine.x;
-    if (snakeLine.x >= 1) {
-        snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
-    }
-}
-
-function moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody) {
-    let prevTail = snake.value[0];
-    ++snakeLine.x;
-    if (snakeLine.x <= 15) {
-        snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
-    }
-}*/
