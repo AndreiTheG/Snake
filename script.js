@@ -57,21 +57,24 @@ function createTable() {
     window.addEventListener("keydown", function move(event) {
         //arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
         if (snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
             if (event.key == 'ArrowRight' && arrowLeft == false) {
-                arrowRight = true;
-                clearInterval(interval); 
+                arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+                intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                /*clearInterval(interval); 
                 interval = setInterval(function output() {
                     moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-                }, 300);
+                }, 300);*/
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
-                arrowLeft = true;
-                clearInterval(interval); 
+                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+                intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                /*clearInterval(interval); 
                 interval = setInterval(function output() {
                     moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
-                }, 300);
+                }, 300);*/
             }
             /*if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowUp = true;
@@ -135,6 +138,15 @@ function checkTheFruitPosition(fruitLine, fruitCol) {
     } else if (fruitCol.val == 18) {
         --fruitCol.val;
     }
+}
+
+function intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
+    clearInterval(interval); 
+    interval = setInterval(function output() {
+        moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+            eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+    }, 300);
 }
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
