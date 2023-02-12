@@ -164,7 +164,7 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
     }
-    moveSnake(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
+    snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction);
     console.log(isSnakeBody.value);
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
@@ -244,8 +244,8 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
     }  
 }
 
-function moveSnake(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction) {
-    let prevTail= snake.value[0];
+function snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction) {
+    let prevTail = snake.value[0];
     if (direction == 'right') {
         ++snakeCol.y;
     } else if (direction == 'left') {
