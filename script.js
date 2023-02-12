@@ -59,12 +59,16 @@ function createTable() {
         if (((event.key == 'ArrowRight' && arrowLeft == false) || (event.key == 'ArrowUp' && arrowDown == false)
         || (event.key == 'ArrowLeft' && arrowRight == false) || (event.key == 'ArrowDown' && arrowUp == false)) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            /*if (event.key == 'ArrowRight') {
+            if (event.key == 'ArrowRight') {
                 arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+            } else if (event.key == 'ArrowLeft') {
+                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
             }
             if (event.key == 'ArrowUp') {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
-            }*/
+            } else if (event.key == 'ArrowDown') {
+                arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+            }
             //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
             clearInterval(interval); 
             interval = setInterval(function output() {
