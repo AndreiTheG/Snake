@@ -161,10 +161,10 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
         //moveDown(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody);
         direction = 'down';
     }
+    snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
     }
-    snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction);
     console.log(isSnakeBody.value);
     if (snakeCol.y == 18 || snakeCol.y == 0 || snakeLine.x == 0 || snakeLine.x == 16 || isSnakeBody.value == true) {
