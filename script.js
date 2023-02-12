@@ -55,17 +55,22 @@ function createTable() {
     } }, 300);
     console.log(interval);
     window.addEventListener("keydown", function move(event) {
-        arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
+        //arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
         if (snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
             if (event.key == 'ArrowRight' && arrowLeft == false) {
-                arrowRight = true;
+                arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
                 clearInterval(interval); 
                 interval = setInterval(function output() {
                     moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
                 }, 300);
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
-                arrowLeft = true;
+                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+                clearInterval(interval); 
+                interval = setInterval(function output() {
+                    moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+                        eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                }, 300);
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowUp = true;
