@@ -63,12 +63,12 @@ function createTable() {
             if (event.key == 'ArrowRight' && arrowLeft == false) {
                 arrowRight = true;
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
-                arrowRight = false;
+                arrowLeft = true;
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
-                arrowRight = false;
+                arrowRight = true;
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
-                arrowRight = false;
+                arrowRight = true;
             }
             //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
             clearInterval(interval); 
