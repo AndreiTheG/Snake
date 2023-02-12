@@ -56,17 +56,18 @@ function createTable() {
     console.log(interval);
     window.addEventListener("keydown", function move(event) {
         //arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
-        if (((event.key == 'ArrowRight' && arrowLeft == false) || (event.key == 'ArrowUp' && arrowDown == false)
-        || (event.key == 'ArrowLeft' && arrowRight == false) || (event.key == 'ArrowDown' && arrowUp == false)) &&
+        if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
+        || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            if (event.key == 'ArrowRight') {
+            arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
+            if (event.key == 'ArrowRight' && arrowLeft == false) {
                 arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
-            } else if (event.key == 'ArrowLeft') {
+            } else if (event.key == 'ArrowLeft' && arrowRight == false) {
                 arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
             }
-            if (event.key == 'ArrowUp') {
+            if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
-            } else if (event.key == 'ArrowDown') {
+            } else if (event.key == 'ArrowDown' && arrowUp == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
             }
             //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
