@@ -61,14 +61,14 @@ function createTable() {
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
             arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
             if (event.key == 'ArrowRight' && arrowLeft == false) {
-                arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+                arrowRight = true;
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
-                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+                arrowRight = false;
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
-                arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+                arrowRight = false;
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
-                arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+                arrowRight = false;
             }
             //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
             clearInterval(interval); 
