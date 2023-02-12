@@ -76,11 +76,15 @@ function createTable() {
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
                 }, 300);*/
             }
-            /*if (event.key == 'ArrowUp' && arrowDown == false) {
-                arrowUp = true;
+            if (event.key == 'ArrowUp' && arrowDown == false) {
+                arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+                intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
-                arrowDown = true;
-            }*/
+                arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+                intervalSet(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
+                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+            }
             /*if ((event.key == 'ArrowRight' && arrowLeft == false) || (event.key == 'ArrowLeft' && arrowRight == false) 
             || (event.key == 'ArrowUp' && arrowDown == false) || (event.key == 'ArrowDown' && arrowUp == false)) {
                 clearInterval(interval); 
