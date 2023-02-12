@@ -11,17 +11,7 @@ function createTable() {
             isNotSnake = true;
         }
     }
-    if (fruitLine.val == 0) {
-        ++fruitLine.val;
-    } else if (fruitLine.val == 16) {
-        --fruitLine.val;
-    }
-    if (fruitCol.val == 0) {
-        ++fruitCol.val;
-    } else if (fruitCol.val == 18) {
-        --fruitCol.val;
-    }
-    console.log("Line: " + fruitLine.val + " Column: " + fruitCol.val);
+    checkTheFruitPosition(fruitLine, fruitCol);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
     const snake = {value: []};
     const len = {size: 0};
@@ -102,6 +92,18 @@ function createTable() {
     });
 }
 
+function checkTheFruitPosition(fruitLine, fruitCol) {
+    if (fruitLine.val == 0) {
+        ++fruitLine.val;
+    } else if (fruitLine.val == 16) {
+        --fruitLine.val;
+    }
+    if (fruitCol.val == 0) {
+        ++fruitCol.val;
+    } else if (fruitCol.val == 18) {
+        --fruitCol.val;
+    }
+}
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     let direction;
