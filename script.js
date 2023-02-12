@@ -72,11 +72,11 @@ function createTable() {
                         eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
                 }, 300);
             }
-            if (event.key == 'ArrowUp' && arrowDown == false) {
+            /*if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowUp = true;
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
                 arrowDown = true;
-            }
+            }*/
             /*if ((event.key == 'ArrowRight' && arrowLeft == false) || (event.key == 'ArrowLeft' && arrowRight == false) 
             || (event.key == 'ArrowUp' && arrowDown == false) || (event.key == 'ArrowDown' && arrowUp == false)) {
                 clearInterval(interval); 
