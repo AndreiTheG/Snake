@@ -22,7 +22,7 @@ function createTable() {
             if (i != 0 && j != 0 && i != 16 && j != 18) {
                 td.id = i * 100 +  j;
                 td.appendChild(document.createTextNode(' '));
-                if (i == snakeLine.x && (j == snakeCol.y || j == snakeCol.y - 1 || j == snakeCol.y - 2)) {
+                if (i == snakeLine.x && j >= snakeCol.y - 2 && j <= snakeCol.y) {
                     snake.value[len.size] = i * 100 + j;
                     ++len.size;
                     td.style.backgroundColor = 'yellow';
@@ -66,7 +66,7 @@ function createTable() {
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
-            } else if (event.key == 'ArrowDown' && arrowUp ==false) {
+            } else if (event.key == 'ArrowDown' && arrowUp == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
             }
             //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
