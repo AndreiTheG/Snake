@@ -167,6 +167,9 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
     if (eatenFruit.val == true) {
         ++len.size;
         snake.value[len.size - 1] = nextValue;
+        for (let i = 0; i < len.size; ++i) {
+            console.log(snake.value[i]);
+        }
         let elem = document.getElementById(nextValue);
         elem.style.backgroundColor = 'yellow';
         console.log("isEaten");
