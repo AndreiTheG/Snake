@@ -22,7 +22,7 @@ function createTable() {
             if (i != 0 && j != 0 && i != 16 && j != 18) {
                 td.id = i * 100 +  j;
                 td.appendChild(document.createTextNode(' '));
-                cellColor(td, i, j, snake, snakeLine, snakeCol, fruitLine, fruitCol);
+                cellColor(td, i, j, snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
                 /*if (i == snakeLine.x && j >= snakeCol.y - 2 && j <= snakeCol.y) {
                     snake.value[len.size] = i * 100 + j;
                     ++len.size;
@@ -50,7 +50,7 @@ function createTable() {
     Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
-function cellColor(td, line, column, snake, snakeLine, snakeCol, fruitLine, fruitCol) {
+function cellColor(td, line, column, snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
     if (line == snakeLine.x && column >= snakeCol.y - 2 && column <= snakeCol.y) {
         snake.value[len.size] = line * 100 + column;
         ++len.size;
