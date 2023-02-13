@@ -162,7 +162,7 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
             }
         }
         let idCell, neighbour = null, modifyValue = 0;
-        if (direction == 'down' || direction == 'right') {
+        if (direction == 'down') {
             idCell = (snakeLine.x + 1) * 100 + snakeCol.y;
         } else if (direction == 'up') {
             idCell = (snakeLine.x - 1) * 100 + snakeCol.y;
