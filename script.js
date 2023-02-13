@@ -105,22 +105,7 @@ function checkTheFruitPosition(fruitLine, fruitCol) {
     }
 }
 
-function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction)/*arrowRight, arrowUp, arrowLeft, arrowDown)*/ {
-    /*let direction;
-    if (arrowRight == true) {
-        direction = 'right';
-        snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
-    } else if (arrowLeft == true) {
-        direction = 'left';
-        snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
-    } 
-    if (arrowUp == true) {
-        direction = 'up';
-        snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
-    } else if (arrowDown == true) {
-        direction = 'down';
-        snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
-    }*/
+function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
     snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
