@@ -162,6 +162,10 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
     }
 }
 
+function ReplayGame() {
+    window.location.reload();
+}
+
 function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail) {
     let nextValue = snakeLine.x * 100 + snakeCol.y;
     if (eatenFruit.val == true) {
@@ -213,8 +217,4 @@ function snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBod
     if (snakeCol.y >= 1 && snakeCol.y <= 17 && snakeLine.x >= 1 && snakeLine.x <= 15) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
-}
-
-function ReplayGame() {
-    window.location.reload();
 }
