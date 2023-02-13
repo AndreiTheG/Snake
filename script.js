@@ -108,7 +108,7 @@ function checkTheFruitPosition(fruitLine, fruitCol) {
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
     let direction;
-    console.log(eatenFruit.val);
+    console.log("Fructul mancat: " + eatenFruit.val);
     if (arrowRight == true) {
         direction = 'right';
         snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
