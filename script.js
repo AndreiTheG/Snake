@@ -3,14 +3,7 @@ function createTable() {
     const tbdy = document.createElement("tbody");
     const fruitLine = {val: 0};
     const fruitCol = {val: 0};
-    let isNotSnake = false;
-    while (isNotSnake == false) {
-        fruitLine.val =  Math.floor(Math.random() * 16);
-        fruitCol.val =  Math.floor(Math.random() * 18);
-        if (!(fruitLine.val == 8 && (fruitCol.val == 7 || fruitCol.val == 8 || fruitCol.val == 9))) {
-            isNotSnake = true;
-        }
-    }
+    randomPositionOfFruit(fruitLine, fruitCol);
     checkTheFruitPosition(fruitLine, fruitCol);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
     const snake = {value: []};
@@ -39,6 +32,30 @@ function createTable() {
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
     Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
+}
+
+function randomPositionOfFruit(fruitLine, fruitCol) {
+    let isNotSnake = false;
+    while (isNotSnake == false) {
+        fruitLine.val =  Math.floor(Math.random() * 16);
+        fruitCol.val =  Math.floor(Math.random() * 18);
+        if (!(fruitLine.val == 8 && (fruitCol.val == 7 || fruitCol.val == 8 || fruitCol.val == 9))) {
+            isNotSnake = true;
+        }
+    }
+}
+
+function checkTheFruitPosition(fruitLine, fruitCol) {
+    if (fruitLine.val == 0) {
+        ++fruitLine.val;
+    } else if (fruitLine.val == 16) {
+        --fruitLine.val;
+    }
+    if (fruitCol.val == 0) {
+        ++fruitCol.val;
+    } else if (fruitCol.val == 18) {
+        --fruitCol.val;
+    }
 }
 
 function cellColor(td, line, column, snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
@@ -91,19 +108,6 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
     });
 }
 
-function checkTheFruitPosition(fruitLine, fruitCol) {
-    if (fruitLine.val == 0) {
-        ++fruitLine.val;
-    } else if (fruitLine.val == 16) {
-        --fruitLine.val;
-    }
-    if (fruitCol.val == 0) {
-        ++fruitCol.val;
-    } else if (fruitCol.val == 18) {
-        --fruitCol.val;
-    }
-}
-
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
     snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     if (eatenFruit.val == true) {
@@ -116,10 +120,6 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
         gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
         document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
     }
-}
-
-function ReplayGame() {
-    window.location.reload();
 }
 
 function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
@@ -180,11 +180,11 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
             elem.style.backgroundColor = 'yellow';
         }
     } else {
-        for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
+        /*for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
             if (snake.value[i] == nextValue) {
                 isSnakeBody.value = true;
             }
-        }
+        }*/
         for (let i = 0; i < len.size - 1; ++i) {
             snake.value[i] = snake.value[i + 1];
         } 
@@ -213,4 +213,8 @@ function snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBod
     if (snakeCol.y >= 1 && snakeCol.y <= 17 && snakeLine.x >= 1 && snakeLine.x <= 15) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
+}
+
+function ReplayGame() {
+    window.location.reload();
 }
