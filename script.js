@@ -172,11 +172,15 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
                 exists = true;
             }
         }
-        console.log("Elementul este existent: " + exists);
-        snake.value[len.size - 1] = nextValue;
-        let elem = document.getElementById(nextValue);
-        elem.style.backgroundColor = 'yellow';
-        console.log("isEaten");
+        if (exists == true) {
+            isSnakeBody.value = true;
+            console.log("Elementul este existent: " + exists);
+        } else {
+            snake.value[len.size - 1] = nextValue;
+            let elem = document.getElementById(nextValue);
+            elem.style.backgroundColor = 'yellow';
+            console.log("isEaten");
+        }
     } else {
         for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
             if (snake.value[i] == nextValue) {
