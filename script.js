@@ -83,6 +83,7 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
             clearInterval(interval); 
             interval = setInterval(function output() {
                 randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction);
+                console.log(isSnakeBody.value);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             }, 300);
