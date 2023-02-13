@@ -85,7 +85,7 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
                 //randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction);
                 console.log(direction);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                    eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
+                    eatenFruit, isSnakeBody, direction/*arrowRight, arrowUp, arrowLeft, arrowDown*/);
             }, 300);
         } 
     });
@@ -104,8 +104,8 @@ function checkTheFruitPosition(fruitLine, fruitCol) {
     }
 }
 
-function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown) {
-    let direction;
+function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction)/*arrowRight, arrowUp, arrowLeft, arrowDown)*/ {
+    /*let direction;
     if (arrowRight == true) {
         direction = 'right';
         snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
@@ -119,8 +119,8 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
     } else if (arrowDown == true) {
         direction = 'down';
         snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
-    }
-    //snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
+    }*/
+    snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
     }
