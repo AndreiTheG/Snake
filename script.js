@@ -166,10 +166,14 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
     let nextValue = snakeLine.x * 100 + snakeCol.y;
     if (eatenFruit.val == true) {
         ++len.size;
-        snake.value[len.size - 1] = nextValue;
-        for (let i = 0; i < len.size; ++i) {
-            console.log(snake.value[i]);
+        let exists = false;
+        for (let i = 0; i < len.size && exists == false; ++i) {
+            if (snake.value[i] == nextValue) {
+                exists = true;
+            }
         }
+        console.log("Elementul este existent: " + exists);
+        snake.value[len.size - 1] = nextValue;
         let elem = document.getElementById(nextValue);
         elem.style.backgroundColor = 'yellow';
         console.log("isEaten");
