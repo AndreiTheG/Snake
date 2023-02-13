@@ -83,10 +83,9 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
-                //randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction);
                 console.log(direction);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                    eatenFruit, isSnakeBody, direction/*arrowRight, arrowUp, arrowLeft, arrowDown*/);
+                    eatenFruit, isSnakeBody, direction);
             }, 300);
         } 
     });
@@ -143,17 +142,18 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
                 }
             }
         }
-        let idCell, neighbour = null, modifyValue = 0;
+        let neighbour = null, incrementLine = 0, incrementCol = 0;
         if (direction == 'down') {
-            idCell = (snakeLine.x + 1) * 100 + snakeCol.y;
+            incrementLine = 1;
         } else if (direction == 'up') {
-            idCell = (snakeLine.x - 1) * 100 + snakeCol.y;
-        } else if (direction == 'left') {
-            idCell = snakeLine.x * 100 + (snakeCol.y - 1);    
+           incrementLine = -1;
+        } 
+        if (direction == 'left') {
+            incrementCol = -1;
         } else if (direction == 'right') {
-            idCell = snakeLine.x * 100 + (snakeCol.y + 1);
+            incrementCol = 1;
         }
-        neighbour = document.getElementById(idCell);
+        neighbour = document.getElementById((snakeLine.x + incrementLine) * 100 + (snakeCol.y + incrementCol));
         if (neighbour != null && neighbour.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }
