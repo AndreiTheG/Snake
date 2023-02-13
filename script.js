@@ -177,25 +177,25 @@ function ReplayGame() {
     window.location.reload();
 }
 
+function touchTheSnakeBody(snake, len, isSnakeBody, nextValue) {
+    for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
+        if (snake.value[i] == nextValue) {
+            isSnakeBody.value = true;
+        }
+    }
+}
+
 function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail) {
     let nextValue = snakeLine.x * 100 + snakeCol.y;
     if (eatenFruit.val == true) {
         ++len.size;
         console.log(isSnakeBody.value);
-        for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
-            if (snake.value[i] == nextValue) {
-                isSnakeBody.value = true;
-            }
-        }
+        touchTheSnakeBody(snake, len, isSnakeBody, nextValue);
         snake.value[len.size - 1] = nextValue;
         let elem = document.getElementById(nextValue);
         elem.style.backgroundColor = 'yellow';
     } else {
-        for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
-            if (snake.value[i] == nextValue) {
-                isSnakeBody.value = true;
-            }
-        }
+        touchTheSnakeBody(snake, len, isSnakeBody, nextValue);
         for (let i = 0; i < len.size - 1; ++i) {
             snake.value[i] = snake.value[i + 1];
         } 
