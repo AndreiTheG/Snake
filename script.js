@@ -23,15 +23,6 @@ function createTable() {
                 td.id = i * 100 +  j;
                 td.appendChild(document.createTextNode(' '));
                 cellColor(td, i, j, snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
-                /*if (i == snakeLine.x && j >= snakeCol.y - 2 && j <= snakeCol.y) {
-                    snake.value[len.size] = i * 100 + j;
-                    ++len.size;
-                    td.style.backgroundColor = 'yellow';
-                } else if (i == fruitLine.val && j == fruitCol.val) {
-                    td.style.backgroundColor = 'red';
-                } else {
-                    td.style.backgroundColor = 'lawngreen';
-                }*/
                 td.style.border = '2px solid black';
             } else {
                 td.id = i * 100 + j;
@@ -74,18 +65,24 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
+            let direction;
             if (event.key == 'ArrowRight' && arrowLeft == false) {
                 arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+                direction = 'right';
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
                 arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+                direction = 'left';
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+                direction = 'up';
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+                direction = 'down';
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
+                randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowUp, arrowLeft, arrowDown);
             }, 300);
