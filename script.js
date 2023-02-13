@@ -181,8 +181,7 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
     let nextValue = snakeLine.x * 100 + snakeCol.y;
     if (eatenFruit.val == true) {
         ++len.size;
-        let exists = false;
-        for (let i = 0; i < len.size && exists == false; ++i) {
+        for (let i = 0; i < len.size && isSnakeBody == false; ++i) {
             if (snake.value[i] == nextValue) {
                 isSnakeBody.value = true;
             }
