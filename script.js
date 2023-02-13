@@ -184,16 +184,12 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
         let exists = false;
         for (let i = 0; i < len.size && exists == false; ++i) {
             if (snake.value[i] == nextValue) {
-                exists = true;
+                isSnakeBody.value = true;
             }
         }
-        if (exists == true) {
-            isSnakeBody.value = true;
-        } else {
-            snake.value[len.size - 1] = nextValue;
-            let elem = document.getElementById(nextValue);
-            elem.style.backgroundColor = 'yellow';
-        }
+        snake.value[len.size - 1] = nextValue;
+        let elem = document.getElementById(nextValue);
+        elem.style.backgroundColor = 'yellow';
     } else {
         for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
             if (snake.value[i] == nextValue) {
