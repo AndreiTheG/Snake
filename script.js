@@ -22,7 +22,8 @@ function createTable() {
             if (i != 0 && j != 0 && i != 16 && j != 18) {
                 td.id = i * 100 +  j;
                 td.appendChild(document.createTextNode(' '));
-                if (i == snakeLine.x && j >= snakeCol.y - 2 && j <= snakeCol.y) {
+                cellColor(td, i, j, snake, snakeLine, snakeCol, fruitLine, fruitCol);
+                /*if (i == snakeLine.x && j >= snakeCol.y - 2 && j <= snakeCol.y) {
                     snake.value[len.size] = i * 100 + j;
                     ++len.size;
                     td.style.backgroundColor = 'yellow';
@@ -30,7 +31,7 @@ function createTable() {
                     td.style.backgroundColor = 'red';
                 } else {
                     td.style.backgroundColor = 'lawngreen';
-                }
+                }*/
                 td.style.border = '2px solid black';
             } else {
                 td.id = i * 100 + j;
@@ -47,6 +48,18 @@ function createTable() {
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
     Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
+}
+
+function cellColor(td, line, column, snake, snakeLine, snakeCol, fruitLine, fruitCol) {
+    if (line == snakeLine.x && column >= snakeCol.y - 2 && column <= snakeCol.y) {
+        snake.value[len.size] = line * 100 + column;
+        ++len.size;
+        td.style.backgroundColor = 'yellow';
+    } else if (line == fruitLine.val && column == fruitCol.val) {
+        td.style.backgroundColor = 'red';
+    } else {
+        td.style.backgroundColor = 'lawngreen';
+    }
 }
 
 function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
@@ -142,16 +155,17 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
                 }
             }
         }
-        let neighbour = null;
-        if (direction == 'down') {
-            neighbour = document.getElementById((snakeLine.x + 1) * 100 + snakeCol.y);
+        let idCell, neighbour = null, modifyValue = 0;
+        if (direction == 'down' || direction == 'right') {
+            idCell = (snakeLine.x + 1) * 100 + snakeCol.y;
         } else if (direction == 'up') {
-            neighbour = document.getElementById((snakeLine.x - 1) * 100 + snakeCol.y)
+            idCell = (snakeLine.x - 1) * 100 + snakeCol.y;
         } else if (direction == 'left') {
-            neighbour = document.getElementById(snakeLine.x * 100 + (snakeCol.y - 1));    
+            idCell = snakeLine.x * 100 + (snakeCol.y - 1);    
         } else if (direction == 'right') {
-            neighbour = document.getElementById(snakeLine.x * 100 + (snakeCol.y + 1));
+            idCell = snakeLine.x * 100 + (snakeCol.y + 1);
         }
+        neighbour = document.getElementById(idCell);
         if (neighbour != null && neighbour.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }
