@@ -195,11 +195,11 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
             elem.style.backgroundColor = 'yellow';
         }
     } else {
-        /*for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
+        for (let i = 0; i < len.size && isSnakeBody.value == false; ++i) {
             if (snake.value[i] == nextValue) {
                 isSnakeBody.value = true;
             }
-        }*/
+        }
         for (let i = 0; i < len.size - 1; ++i) {
             snake.value[i] = snake.value[i + 1];
         } 
