@@ -74,38 +74,42 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
     let arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false, interval; 
     const eatenFruit = {val: false}, isSnakeBody = {value: false};
     interval = setInterval(function output() { if (arrowRight == true) {
-        //let direction = 'right';  
+        let direction = 'right';  
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-            eatenFruit, isSnakeBody, arrowRight, arrowLeft, arrowUp, arrowDown);
+            eatenFruit, isSnakeBody, direction);
     } }, 300);
     console.log(interval);
     window.addEventListener("keydown", function move(event) {
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
+            let direction;
             if (event.key == 'ArrowRight' && arrowLeft == false) {
                 arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+                direction = 'right';
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
                 arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+                direction = 'left';
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+                direction = 'up';
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
                 arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+                direction = 'down';
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
                 console.log(direction);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
-                    eatenFruit, isSnakeBody, arrowRight, arrowLeft, arrowUp, arrowDown);
+                    eatenFruit, isSnakeBody, direction);
             }, 300);
         } 
     });
 }
 
-function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, arrowRight, arrowLeft, arrowUp, arrowDown) {
-    let direction;
+function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
+    /*let direction;
     if (arrowRight == true) {
         direction = 'right';
     } else if (arrowLeft == true) {
@@ -115,7 +119,7 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
         direction = 'up';
     } else if (arrowDown == true) {
         direction = 'down';
-    }
+    }*/
     snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
