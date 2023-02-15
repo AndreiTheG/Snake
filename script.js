@@ -174,9 +174,9 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
     if (eatenFruit.val == true) {
         ++len.size;
         touchTheSnakeBody(snake, len, isSnakeBody, nextValue);
-        snake.value[len.size - 1] = nextValue;
+        /*snake.value[len.size - 1] = nextValue;
         let elem = document.getElementById(nextValue);
-        elem.style.backgroundColor = 'yellow';
+        elem.style.backgroundColor = 'yellow';*/
     } else {
         touchTheSnakeBody(snake, len, isSnakeBody, nextValue);
         for (let i = 0; i < len.size - 1; ++i) {
