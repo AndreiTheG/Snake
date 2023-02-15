@@ -3,8 +3,8 @@ function createTable() {
     const tbdy = document.createElement("tbody");
     const fruitLine = {val: 0};
     const fruitCol = {val: 0};
-    randomInitialPositionOfFruit(fruitLine, fruitCol);
-    checkTheFruitPosition(fruitLine, fruitCol);
+    //randomInitialPositionOfFruit(fruitLine, fruitCol);
+    //checkTheFruitPosition(fruitLine, fruitCol);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
     const snake = {value: []};
     const len = {size: 0};
@@ -31,10 +31,31 @@ function createTable() {
     tbl.setAttribute("border", "2");
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
+    randomPositionOfFruit(snake, len, fruitLine, fruitCol);
     Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
-function randomInitialPositionOfFruit(fruitLine, fruitCol) {
+function randomPositionOfFruit(snake, len, fruitLine, fruitCol) {
+    let isBorderCell = true;
+    while (isBorderCell == true) {
+        fruitLine.val = Math.floor(Math.random() * 16);
+        fruitCol.val = Math.floor(Math.random() * 18);
+        if (fruitLine.val >= 1 && fruitLine.val <= 15 && fruitCol.val >= 1 
+            && fruitCol.val <= 17 && (fruitLine.val != snakeLine.x || fruitCol.val != snakeCol.y)) {
+            let cell = fruitLine.val * 100 + fruitCol.val, isTrue = false;
+            for (let i = 0; i < len.size && isTrue == false; ++i) {
+                if (cell == snake.value[i]) {
+                    isTrue = true;
+                }
+            }
+            if (isTrue == false) {
+                isBorderCell = false;
+            }
+        }
+    }
+}
+
+/*function randomInitialPositionOfFruit(fruitLine, fruitCol) {
     let isNotSnake = false;
     while (isNotSnake == false) {
         fruitLine.val =  Math.floor(Math.random() * 16);
@@ -56,7 +77,7 @@ function checkTheFruitPosition(fruitLine, fruitCol) {
     } else if (fruitCol.val == 18) {
         --fruitCol.val;
     }
-}
+}*/
 
 function cellColor(td, line, column, snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
     if (line == snakeLine.x && column >= snakeCol.y - 2 && column <= snakeCol.y) {
@@ -127,9 +148,10 @@ function modifySnakeLineAndColumn(direction, incrementLine, incrementCol) {
 
 function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
     if (snakeLine.x == fruitLine.val && snakeCol.y == fruitCol.val) {
-        let isBorderCell = true;
+        //let isBorderCell = true;
         eatenFruit.val = true;
-        while (isBorderCell == true) {
+        randomPositionOfFruit(snake, len, fruitLine, fruitCol);
+        /*while (isBorderCell == true) {
             fruitLine.val = Math.floor(Math.random() * 16);
             fruitCol.val = Math.floor(Math.random() * 18);
             if (fruitLine.val >= 1 && fruitLine.val <= 15 && fruitCol.val >= 1 
@@ -144,7 +166,7 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
                     isBorderCell = false;
                 }
             }
-        }
+        }*/
         const incrementLine = {value: 0}, incrementCol = {value: 0};
         modifySnakeLineAndColumn(direction, incrementLine, incrementCol);
         let neighbour = document.getElementById((snakeLine.x + incrementLine.value) * 100 + (snakeCol.y + incrementCol.value));
