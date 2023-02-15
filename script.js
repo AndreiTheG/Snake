@@ -146,7 +146,7 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
             }
         }
         const incrementLine = {value: 0}, incrementCol = {value: 0};
-        modifySankeLineAndColumn(direction, incrementLine, incrementCol);
+        modifySnakeLineAndColumn(direction, incrementLine, incrementCol);
         let neighbour = document.getElementById((snakeLine.x + incrementLine.value) * 100 + (snakeCol.y + incrementCol.value));
         if (neighbour != null && neighbour.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
