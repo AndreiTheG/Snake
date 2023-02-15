@@ -80,24 +80,23 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
     } }, 300);
     console.log(interval);
     window.addEventListener("keydown", function move(event) {
-        arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            
+            arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
             if (event.key == 'ArrowRight' && arrowLeft == false) {
-                arrowRight = true;//, arrowLeft = false, arrowUp = false, arrowDown = false;
+                arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
-                arrowLeft = true;//, arrowUp = false, arrowDown = false;
+                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
-                arrowUp = true;//, arrowDown = false;
+                arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
-                arrowDown = true;
+                arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
-                //console.log(direction);
+                console.log(direction);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowLeft, arrowUp, arrowDown);
             }, 300);
