@@ -73,13 +73,12 @@ function cellColor(td, line, column, snake, len, snakeLine, snakeCol, fruitLine,
 function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
     let arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false, interval; 
     const eatenFruit = {val: false}, isSnakeBody = {value: false};
-    interval = setInterval(function output() { if (arrowRight == true) {
-        let direction = 'right';  
+    let direction = 'right'; 
+    interval = setInterval(function output() { if (direction != 'left') {
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
             eatenFruit, isSnakeBody, direction);
     } }, 300);
     console.log(interval);
-    let direction = 'right';
     window.addEventListener("keydown", function move(event) {
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
