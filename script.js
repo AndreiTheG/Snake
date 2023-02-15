@@ -112,6 +112,19 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
     }
 }
 
+function modifySnakeLineAndColumn(direction, incrementLine, incrementCol) {
+    if (direction == 'right') {
+        incrementCol.value = 1;
+    } else if (direction == 'left') {
+        incrementCol.value = -1;
+    }
+    if (direction == 'up') {
+        incrementLine.value = -1;
+    } else if (direction == 'down') {
+        incrementLine.value = 1;
+    }
+}
+
 function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
     if (snakeLine.x == fruitLine.val && snakeCol.y == fruitCol.val) {
         let isBorderCell = true;
@@ -133,26 +146,13 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
             }
         }
         const incrementLine = {value: 0}, incrementCol = {value: 0};
-        modifyLineAndColumn(direction, incrementLine, incrementCol);
+        modifySankeLineAndColumn(direction, incrementLine, incrementCol);
         let neighbour = document.getElementById((snakeLine.x + incrementLine.value) * 100 + (snakeCol.y + incrementCol.value));
         if (neighbour != null && neighbour.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }
         let fruit = document.getElementById(fruitLine.val * 100 + fruitCol.val);
         fruit.style.backgroundColor = 'red';
-    }
-}
-
-function modifyLineAndColumn(direction, incrementLine, incrementCol) {
-    if (direction == 'right') {
-        incrementCol.value = 1;
-    } else if (direction == 'left') {
-        incrementCol.value = -1;
-    }
-    if (direction == 'up') {
-        incrementLine.value = -1;
-    } else if (direction == 'down') {
-        incrementLine.value = 1;
     }
 }
 
@@ -194,7 +194,7 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
 function snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction) {
     let prevTail = snake.value[0];
     const incrementLine = {value: 0}, incrementCol = {value: 0};
-    modifyLineAndColumn(direction, incrementLine, incrementCol);
+    modifySnakeLineAndColumn(direction, incrementLine, incrementCol);
     snakeLine.x += incrementLine.value, snakeCol.y += incrementCol.value;
     if (snakeCol.y >= 1 && snakeCol.y <= 17 && snakeLine.x >= 1 && snakeLine.x <= 15) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
