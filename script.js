@@ -84,18 +84,18 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            if (event.key == 'ArrowRight' && arrowLeft == false && direction != 'left') {
-                arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+            if (event.key == 'ArrowRight' && direction != 'left') {
+                //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
                 direction = 'right';
-            } else if (event.key == 'ArrowLeft' && arrowRight == false && direction != 'right') {
-                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+            } else if (event.key == 'ArrowLeft' && direction != 'right') {
+                //arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
                 direction = 'left';
             }
-            if (event.key == 'ArrowUp' && arrowDown == false && direction != 'down') {
-                arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+            if (event.key == 'ArrowUp' && direction != 'down') {
+                //arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
                 direction = 'up';
-            } else if (event.key == 'ArrowDown' && arrowUp == false && direction != 'up') {
-                arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+            } else if (event.key == 'ArrowDown' && direction != 'up') {
+                //arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
                 direction = 'down';
             }
             clearInterval(interval); 
@@ -109,17 +109,6 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
 }
 
 function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eatenFruit, isSnakeBody, direction) {
-    /*let direction;
-    if (arrowRight == true) {
-        direction = 'right';
-    } else if (arrowLeft == true) {
-        direction = 'left';
-    }
-    if (arrowUp == true) {
-        direction = 'up';
-    } else if (arrowDown == true) {
-        direction = 'down';
-    }*/
     snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction);
     if (eatenFruit.val == true) {
         eatenFruit.val = false;
