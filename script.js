@@ -6,8 +6,8 @@ function createTable() {
     //randomInitialPositionOfFruit(fruitLine, fruitCol);
     //checkTheFruitPosition(fruitLine, fruitCol);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
-    const snake = {value: []};
-    const len = {size: 0};
+    const snake = {value: [807, 808, 809]};
+    const len = {size: 3};
     randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
     for (let i = 0; i <= 16; ++i) {
         const tr = document.createElement("tr");
@@ -81,8 +81,8 @@ function checkTheFruitPosition(fruitLine, fruitCol) {
 
 function cellColor(td, line, column, snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
     if (line == snakeLine.x && column >= snakeCol.y - 2 && column <= snakeCol.y) {
-        snake.value[len.size] = line * 100 + column;
-        ++len.size;
+        //snake.value[len.size] = line * 100 + column;
+        //++len.size;
         td.style.backgroundColor = 'yellow';
     } else if (line == fruitLine.val && column == fruitCol.val) {
         td.style.backgroundColor = 'red';
