@@ -132,10 +132,9 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
                 }
             }
         }
-        let neighbour = null;
         const incrementLine = {value: 0}, incrementCol = {value: 0};
         modifyLineAndColumn(direction, incrementLine, incrementCol);
-        neighbour = document.getElementById((snakeLine.x + incrementLine.value) * 100 + (snakeCol.y + incrementCol.value));
+        let neighbour = document.getElementById((snakeLine.x + incrementLine.value) * 100 + (snakeCol.y + incrementCol.value));
         if (neighbour != null && neighbour.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }
