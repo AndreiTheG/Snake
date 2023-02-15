@@ -14,7 +14,7 @@ function createTable() {
             if (i != 0 && j != 0 && i != 16 && j != 18) {
                 td.id = i * 100 +  j;
                 td.appendChild(document.createTextNode(' '));
-                cellColor(td, i, j, snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
+                cellColor(td, i, j, snakeLine, snakeCol, fruitLine, fruitCol);
                 td.style.border = '2px solid black';
             } else {
                 td.id = i * 100 + j;
@@ -53,7 +53,7 @@ function randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruit
     }
 }
 
-function cellColor(td, line, column, snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
+function cellColor(td, line, column, snakeLine, snakeCol, fruitLine, fruitCol) {
     if (line == snakeLine.x && column >= snakeCol.y - 2 && column <= snakeCol.y) {
         td.style.backgroundColor = 'yellow';
     } else if (line == fruitLine.val && column == fruitCol.val) {
