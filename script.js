@@ -96,7 +96,7 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
-                console.log(direction);
+                //console.log(direction);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, arrowRight, arrowLeft, arrowUp, arrowDown);
             }, 300);
