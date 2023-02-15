@@ -30,7 +30,7 @@ function createTable() {
     tbl.setAttribute("border", "2");
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
-    Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
+    controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
 function randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
@@ -63,7 +63,7 @@ function cellColor(td, line, column, snakeLine, snakeCol, fruitLine, fruitCol) {
     }
 }
 
-function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
+function controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
     let interval, direction = 'right'; 
     const eatenFruit = {val: false}, isSnakeBody = {value: false};
     interval = setInterval(function output() { if (direction != 'left') {
@@ -101,7 +101,7 @@ function moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCo
         clearInterval(interval);
         let gameMessage = document.getElementById('EndOfTheGame');
         gameMessage.innerHTML = 'Game over! <br>' + 'Your score is ' + (len.size - 3) + '🍎!';
-        document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="ReplayGame()">Replay</button>';
+        document.getElementById("refresh").innerHTML = '<button id="Replay" type="button" class="btn btn-secondary" onclick="replayGame()">Replay</button>';
     }
 }
 
@@ -133,7 +133,7 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
     }
 }
 
-function ReplayGame() {
+function replayGame() {
     window.location.reload();
 }
 
