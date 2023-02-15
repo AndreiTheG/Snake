@@ -3,7 +3,7 @@ function createTable() {
     const tbdy = document.createElement("tbody");
     const fruitLine = {val: 0};
     const fruitCol = {val: 0};
-    randomPositionOfFruit(fruitLine, fruitCol);
+    randomInitialPositionOfFruit(fruitLine, fruitCol);
     checkTheFruitPosition(fruitLine, fruitCol);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
     const snake = {value: []};
@@ -34,7 +34,7 @@ function createTable() {
     Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
-function randomPositionOfFruit(fruitLine, fruitCol) {
+function randomInitialPositionOfFruit(fruitLine, fruitCol) {
     let isNotSnake = false;
     while (isNotSnake == false) {
         fruitLine.val =  Math.floor(Math.random() * 16);
@@ -77,7 +77,6 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
             eatenFruit, isSnakeBody, direction);
     } }, 300);
-    console.log(interval);
     window.addEventListener("keydown", function move(event) {
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
@@ -94,7 +93,6 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
-                console.log(direction);
                 moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
                     eatenFruit, isSnakeBody, direction);
             }, 300);
@@ -177,7 +175,6 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
     let nextValue = snakeLine.x * 100 + snakeCol.y;
     if (eatenFruit.val == true) {
         ++len.size;
-        console.log(isSnakeBody.value);
         touchTheSnakeBody(snake, len, isSnakeBody, nextValue);
         snake.value[len.size - 1] = nextValue;
         let elem = document.getElementById(nextValue);
