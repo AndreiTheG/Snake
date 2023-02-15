@@ -79,22 +79,22 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
             eatenFruit, isSnakeBody, direction);
     } }, 300);
     console.log(interval);
+    let direction = 'right';
     window.addEventListener("keydown", function move(event) {
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            let direction;
-            if (event.key == 'ArrowRight' && arrowLeft == false) {
+            if (event.key == 'ArrowRight' && arrowLeft == false && direction != 'left') {
                 arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
                 direction = 'right';
-            } else if (event.key == 'ArrowLeft' && arrowRight == false) {
+            } else if (event.key == 'ArrowLeft' && arrowRight == false && direction != 'right') {
                 arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
                 direction = 'left';
             }
-            if (event.key == 'ArrowUp' && arrowDown == false) {
+            if (event.key == 'ArrowUp' && arrowDown == false && direction != 'down') {
                 arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
                 direction = 'up';
-            } else if (event.key == 'ArrowDown' && arrowUp == false) {
+            } else if (event.key == 'ArrowDown' && arrowUp == false && direction != 'up') {
                 arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
                 direction = 'down';
             }
