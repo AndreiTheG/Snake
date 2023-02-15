@@ -71,9 +71,8 @@ function cellColor(td, line, column, snake, len, snakeLine, snakeCol, fruitLine,
 }
 
 function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
-    let arrowRight = true, arrowUp = false, arrowLeft = false, arrowDown = false, interval; 
+    let interval, direction = 'right'; 
     const eatenFruit = {val: false}, isSnakeBody = {value: false};
-    let direction = 'right'; 
     interval = setInterval(function output() { if (direction != 'left') {
         moveSnake(interval, snake, len, snakeLine, snakeCol, fruitLine, fruitCol,
             eatenFruit, isSnakeBody, direction);
@@ -84,17 +83,13 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
             if (event.key == 'ArrowRight' && direction != 'left') {
-                //arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
                 direction = 'right';
             } else if (event.key == 'ArrowLeft' && direction != 'right') {
-                //arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
                 direction = 'left';
             }
             if (event.key == 'ArrowUp' && direction != 'down') {
-                //arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
                 direction = 'up';
             } else if (event.key == 'ArrowDown' && direction != 'up') {
-                //arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
                 direction = 'down';
             }
             clearInterval(interval); 
@@ -141,23 +136,28 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
                 }
             }
         }
-        let neighbour = null, incrementLine = 0, incrementCol = 0;
-        if (direction == 'down') {
-            incrementLine = 1;
-        } else if (direction == 'up') {
-           incrementLine = -1;
-        } 
-        if (direction == 'left') {
-            incrementCol = -1;
-        } else if (direction == 'right') {
-            incrementCol = 1;
-        }
+        let neighbour = null;
+        const incrementLine = {value: 0}, incrementCol = {value: 0};
+        modifyLineAndColumn(direction, incrementLine, incrementCol);
         neighbour = document.getElementById((snakeLine.x + incrementLine) * 100 + (snakeCol.y + incrementCol));
         if (neighbour != null && neighbour.style.backgroundColor == 'yellow') {
             isSnakeBody.value = true;
         }
         let fruit = document.getElementById(fruitLine.val * 100 + fruitCol.val);
         fruit.style.backgroundColor = 'red';
+    }
+}
+
+function modifyLineAndColumn(direction, incrementLine, incrementCol) {
+    if (direction == 'right') {
+        incrementCol.value = 1;
+    } else if (direction == 'left') {
+        incrementCol.value = -1;
+    }
+    if (direction == 'up') {
+        incrementLine.value = -1;
+    } else if (direction == 'down') {
+        incrementLine.value = 1;
     }
 }
 
@@ -199,16 +199,9 @@ function snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit
 
 function snakesDirection(snake, snakeLine, snakeCol, len, eatenFruit, isSnakeBody, direction) {
     let prevTail = snake.value[0];
-    if (direction == 'right') {
-        ++snakeCol.y;
-    } else if (direction == 'left') {
-        --snakeCol.y;
-    }
-    if (direction == 'up') {
-        --snakeLine.x;
-    } else if (direction == 'down') {
-        ++snakeLine.x;
-    }
+    const incrementLine = {value: 0}, incrementCol = {value: 0};
+    modifyLineAndColumn(direction, incrementLine, incrementCol);
+    snakeLine.x += incrementLine.value, snakeCol.y += incrementCol.value;
     if (snakeCol.y >= 1 && snakeCol.y <= 17 && snakeLine.x >= 1 && snakeLine.x <= 15) {
         snakeBehaviour(len, snake, snakeLine, snakeCol, isSnakeBody, eatenFruit, prevTail);
     }
