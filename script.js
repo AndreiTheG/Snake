@@ -3,8 +3,6 @@ function createTable() {
     const tbdy = document.createElement("tbody");
     const fruitLine = {val: 0};
     const fruitCol = {val: 0};
-    //randomInitialPositionOfFruit(fruitLine, fruitCol);
-    //checkTheFruitPosition(fruitLine, fruitCol);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
     const snake = {value: [807, 808, 809]};
     const len = {size: 3};
