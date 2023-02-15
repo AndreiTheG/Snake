@@ -6,6 +6,7 @@ function createTable() {
     //randomInitialPositionOfFruit(fruitLine, fruitCol);
     //checkTheFruitPosition(fruitLine, fruitCol);
     const snakeLine = {x: 8}, snakeCol = {y: 9};
+    randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
     const snake = {value: []};
     const len = {size: 0};
     for (let i = 0; i <= 16; ++i) {
@@ -31,7 +32,6 @@ function createTable() {
     tbl.setAttribute("border", "2");
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
-    randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
     Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
