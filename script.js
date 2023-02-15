@@ -80,10 +80,11 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
     } }, 300);
     console.log(interval);
     window.addEventListener("keydown", function move(event) {
+        arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
+            
             if (event.key == 'ArrowRight' && arrowLeft == false) {
                 arrowRight = true;//, arrowLeft = false, arrowUp = false, arrowDown = false;
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
