@@ -38,8 +38,8 @@ function randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruit
     while (isBorderCell == true) {
         fruitLine.val = Math.floor(Math.random() * 16);
         fruitCol.val = Math.floor(Math.random() * 18);
-        if (fruitLine.val >= 1 && fruitLine.val <= 15 && fruitCol.val >= 1 
-            && fruitCol.val <= 17 && (fruitLine.val != snakeLine.x || fruitCol.val != snakeCol.y)) {
+        //if (fruitLine.val >= 1 && fruitLine.val <= 15 && fruitCol.val >= 1 
+        //    && fruitCol.val <= 17 && (fruitLine.val != snakeLine.x || fruitCol.val != snakeCol.y)) {
             let cell = fruitLine.val * 100 + fruitCol.val, isTrue = false;
             for (let i = 0; i < len.size && isTrue == false; ++i) {
                 if (cell == snake.value[i]) {
@@ -49,7 +49,7 @@ function randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruit
             if (isTrue == false) {
                 isBorderCell = false;
             }
-        }
+        //}
     }
 }
 
