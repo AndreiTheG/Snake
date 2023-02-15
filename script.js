@@ -33,12 +33,27 @@ function createTable() {
     controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
+function verifyFruitCoordonates(snakeLine, snakeCol, fruitLine, fruitCol, coordonatesAreCorrect) {
+    let correctLine = false, correctCol = false; 
+    if (fruitLine.val >= 1 && fruitLine.val <= 15 && fruitLine.val != snakeLine.x) {
+        correctLine = true;
+    }
+    if (fruitCol.val >= 1 && fruitCol.val <= 17 && fruitCol.val != snakeCol.y) {
+        correctCol = true;
+    }
+    if (correctLine == true && correctCol == true) {
+        coordonatesAreCorrect.value = true;
+    }
+}
+
 function randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
     let isBorderCell = true;
     while (isBorderCell == true) {
         fruitLine.val = Math.floor(Math.random() * 16);
         fruitCol.val = Math.floor(Math.random() * 18);
-       
+        const coordonatesAreCorrect = {value: false}; 
+        verifyFruitCoordonates(snakeLine, snakeCol, fruitLine, fruitCol, coordonatesAreCorrect);
+        if (coordonatesAreCorrect.value == true) {
             let cell = fruitLine.val * 100 + fruitCol.val, isTrue = false;
             for (let i = 0; i < len.size && isTrue == false; ++i) {
                 if (cell == snake.value[i]) {
@@ -48,6 +63,7 @@ function randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruit
             if (isTrue == false) {
                 isBorderCell = false;
             }
+        }
     }
 }
 
