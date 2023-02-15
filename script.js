@@ -78,8 +78,8 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
             eatenFruit, isSnakeBody, direction);
     } }, 300);
     window.addEventListener("keydown", function move(event) {
-        if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
-        || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
+        if (/*((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
+        || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&*/
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
             if (event.key == 'ArrowRight' && direction != 'left') {
                 direction = 'right';
