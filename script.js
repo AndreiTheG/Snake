@@ -31,11 +31,11 @@ function createTable() {
     tbl.setAttribute("border", "2");
     tbl.id = 'gameTable';
     document.getElementById('button').disabled = true;
-    randomPositionOfFruit(snake, len, fruitLine, fruitCol);
+    randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
     Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len);
 }
 
-function randomPositionOfFruit(snake, len, fruitLine, fruitCol) {
+function randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol) {
     let isBorderCell = true;
     while (isBorderCell == true) {
         fruitLine.val = Math.floor(Math.random() * 16);
@@ -150,7 +150,7 @@ function randomFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol, eaten
     if (snakeLine.x == fruitLine.val && snakeCol.y == fruitCol.val) {
         //let isBorderCell = true;
         eatenFruit.val = true;
-        randomPositionOfFruit(snake, len, fruitLine, fruitCol);
+        randomPositionOfFruit(snake, len, snakeLine, snakeCol, fruitLine, fruitCol);
         /*while (isBorderCell == true) {
             fruitLine.val = Math.floor(Math.random() * 16);
             fruitCol.val = Math.floor(Math.random() * 18);
