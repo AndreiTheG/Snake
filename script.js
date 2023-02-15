@@ -83,16 +83,16 @@ function Controller(snakeLine, snakeCol, fruitLine, fruitCol, snake, len) {
         if (((event.key == 'ArrowRight') || (event.key == 'ArrowUp')
         || (event.key == 'ArrowLeft') || (event.key == 'ArrowDown')) &&
         snakeLine.x >= 1 && snakeLine.x <= 15 && snakeCol.y >= 1 && snakeCol.y <= 17) {
-            let direction;
+            arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = false;
             if (event.key == 'ArrowRight' && arrowLeft == false) {
-                arrowRight = true, arrowLeft = false, arrowUp = false, arrowDown = false;
+                arrowRight = true;//, arrowLeft = false, arrowUp = false, arrowDown = false;
             } else if (event.key == 'ArrowLeft' && arrowRight == false) {
-                arrowRight = false, arrowLeft = true, arrowUp = false, arrowDown = false;
+                arrowLeft = true;//, arrowUp = false, arrowDown = false;
             }
             if (event.key == 'ArrowUp' && arrowDown == false) {
-                arrowRight = false, arrowLeft = false, arrowUp = true, arrowDown = false;
+                arrowUp = true;//, arrowDown = false;
             } else if (event.key == 'ArrowDown' && arrowUp == false) {
-                arrowRight = false, arrowLeft = false, arrowUp = false, arrowDown = true;
+                arrowDown = true;
             }
             clearInterval(interval); 
             interval = setInterval(function output() {
